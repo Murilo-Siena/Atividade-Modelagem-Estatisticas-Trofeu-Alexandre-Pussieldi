@@ -1,1 +1,2 @@
-# Atividade-Modelagem-Estat-sticas-Trof-u-Alexandre-Pussieldi
+# Atividade Introdução a Banco de Dados
+# Modelagem e Estatísticas - Troféu Alexandre Pussieldi
