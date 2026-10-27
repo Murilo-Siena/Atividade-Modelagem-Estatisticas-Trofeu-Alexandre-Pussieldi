@@ -1,6 +1,6 @@
 # Modelagem e Estatísticas - Troféu Alexandre Pussieldi
 ## Diagrama MERMAID
-```
+```mermaid
 erDiagram
     ATLETA {
         int ID PK
