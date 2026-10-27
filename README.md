@@ -5,7 +5,6 @@ erDiagram
     ATLETA {
         int ID PK
         string Nome
-        string Idade
         date Nascimento
     }
 
@@ -22,15 +21,6 @@ erDiagram
         date Data_Fim
     }
 
-    PROVA {
-        int ID PK
-        string Nome
-        string Classe
-        string Status
-        string Atletas
-        string Series
-    }
-
     CAMPEONATO {
         int ID PK
         string Nome
@@ -39,15 +29,22 @@ erDiagram
         date Data_Fim
     }
 
+    PROVA {
+        int ID PK
+        string Nome
+        string Classe
+        string Status
+    }
+
     PROVA_CAMPEONATO {
         int ID_Prova PK, FK
         int ID_Campeonato PK, FK
-        date Data
     }
 
     INSCRICAO {
         int ID PK
         int ID_Atleta FK
+        int ID_Clube FK
         int ID_Prova_Campeonato FK
         int Raia
     }
@@ -58,15 +55,17 @@ erDiagram
         string Tempo
         int Pontos
         int Colocacao
+        string Status
     }
 
-    ATLETA ||--o{ ATLETA_CLUBE : possui
-    CLUBE ||--o{ ATLETA_CLUBE : recebe
+    ATLETA ||--o{ ATLETA_CLUBE : possui_historico
+    CLUBE ||--o{ ATLETA_CLUBE : possui_atletas
 
     PROVA ||--o{ PROVA_CAMPEONATO : participa
     CAMPEONATO ||--o{ PROVA_CAMPEONATO : inclui
 
     ATLETA ||--o{ INSCRICAO : realiza
+    CLUBE ||--o{ INSCRICAO : representa
     PROVA_CAMPEONATO ||--o{ INSCRICAO : recebe
 
     INSCRICAO ||--o| RESULTADO : gera
